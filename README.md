@@ -14,7 +14,9 @@
 - [x] 체크박스 -->
 
 - [x] Code Structure
-- [ ] Variables
-- [ ] Strict Mode
+- [x] Variables
+- [x] Strict Mode
+- [x] Global This
+- [x] Data Type
 
 [JavaScript Core 브랜치](https://www.naver.com)
