@@ -13,7 +13,7 @@
 <!-- - [ ] 체크박스
 - [x] 체크박스 -->
 
-- [ ] Code Structure
+- [x] Code Structure
 - [ ] Variables
 - [ ] Strict Mode
 
