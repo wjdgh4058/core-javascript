@@ -50,19 +50,19 @@ console.log(whichTruthy);
 빈 문자열을 입력하거나 입력을 취소했다면 "취소되었습니다."라는 메시지를 보여주세요.
 */
 
-let userName = prompt("ID를 입력해 주세요: ").toLowerCase();
+let userName = prompt("ID를 입력해 주세요: ")?.toLowerCase();
 // let lowerUserName = userName.toLowerCase();
 let password = "";
 if (userName === "admin") {
-  password = prompt("비밀번호를 입력해 주세요: ").toLowerCase();
+  password = prompt("비밀번호를 입력해 주세요: ")?.toLowerCase();
   if (password === "themaster") {
     console.log("환영합니다!");
-  } else if (password === "" || password === null) {
+  } else if (password.replace(/\s*/g, "") === "" || password === null) {
     console.log("취소되었습니다.");
   } else {
     console.log("인증에 실패하였습니다.");
   }
-} else if (userName === "" || userName === null) {
+} else if (userName.replace(/\s*/g, "") === "" || userName === null) {
   console.log("취소되었습니다.");
 } else {
   console.log("인증에 실패하였습니다.");
