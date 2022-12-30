@@ -32,3 +32,9 @@ for (let key in javaScript) {
   //if (Object.prototype.hasOwnProperty.call(javaScript, key)) console.log(key);
   if ({}.hasOwnProperty.call(javaScript, key)) console.log(key);
 }
+
+let tens = [10, 100, 1000, 10000];
+
+for (let value in tens) {
+  if ({}.hasOwnProperty.call(tens, value)) console.log(tens[value]);
+}
