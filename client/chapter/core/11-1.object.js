@@ -116,10 +116,58 @@ let email = "seonbeom2@euid.dev";
 let authorization = "Lv. 99";
 let isLogin = true;
 
+const student = {
+  name,
+  email,
+  authorization,
+  isLogin,
+};
+
 // 프로퍼티 이름 제한
 // 예약어: class, if, switch, for, while, ...
 
 // 객체가 프로퍼티를 포함하는 지 유무를 반환하는 유틸리티 함수 isEmptyObject 작성
-function isEmptyObject() {
-  return null;
-}
+const isEmptyObject = (object) => {
+  return object.keys(object).length === 0;
+};
+
+// 구조 분해 할당 destructuring assignment
+let salaries = {
+  John: 100,
+  Ann: 160,
+  Pete: 430,
+};
+
+let salary_sum = (object) => {
+  let total = 0;
+  for (let [key, value] of Object.entries(object)) {
+    /* let key = keyValue[0];
+    let value = keyValue[1]; */
+
+    total += value;
+  }
+  return total;
+};
+
+console.log(salary_sum(salaries));
+
+let color = ["#ff0000", "#2b00ff", "#00ff2f"];
+/* const COLOR_RED = color[0];
+const COLOR_BLUE = color[1];
+const COLOR_GREEN = color[2]; */
+
+const [COLOR_RED, COLOR_BLUE, COLOR_GREEN] = color;
+
+// console.log(COLOR_GREEN);
+
+/* 객체 구조 분해 할당 */
+
+/* let salaries = {
+  John: 100,
+  Ann: 160,
+  Pete: 430,
+}; */
+
+const { John, Ann, Pete } = salaries;
+
+console.log(Ann);
