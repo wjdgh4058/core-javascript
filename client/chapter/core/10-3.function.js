@@ -38,24 +38,41 @@ console.log(calcAllMoney(100, 200, 300, 400));
 /* 다음 함수를 작성해봅니다. -------------------------------------------------- */
 
 // pow(numeric: number, powerCount: number): number;
-let square = 1;
+//반복문으로 2**53 만들기
+
 let pow = (numeric, powerCount) => {
+  let square = 1;
   for (let i = 0; i < powerCount; i++) {
     square *= numeric;
   }
   return square;
 };
-console.log(pow(2, 3));
-//반복문으로 2**53 만들기
+console.log(pow(2, 5));
+
+// 표현식으로 만들기
+let powExpression = (numeric, powerCount) => {
+  let result = Array(powerCount)
+    .fill(numeric)
+    .reduce((a, b) => a * b, 1);
+  return result;
+};
+console.log(powExpression(2, 7));
 
 // repeat(text: string, repeatCount: number): string;
-let str = "";
+
 let repeat = (text, repeatCount) => {
+  let str = "";
   for (let i = 0; i < repeatCount; i++) {
     str += `${text} `;
   }
   return str;
 };
 console.log(repeat("hello", 10));
+
+let repeatExpression = (text, repeatCount) =>
+  Array(repeatCount)
+    .fill(text)
+    .reduce((a, b) => a + b, "");
+console.log(repeatExpression("안녕", 5));
 
 // hello *3 => hello hello
