@@ -38,9 +38,9 @@ while (i >= 0) {
   i--;
 } */
 
-while (frontEndDev.length) {
+/* while (frontEndDev.length) {
   console.log(frontEndDev.pop());
-}
+} */
 
 /* let i = 0;
 while (i < frontEndDev.length) {
@@ -52,3 +52,7 @@ while (i < frontEndDev.length) {
 console.log(copyArray.reverse()); */
 
 // 성능 진단 : 순환 vs. 역순환
+
+// console.log(frontEndDev.reverse());
+// console.log([...frontEndDev]);
+// console.log(frontEndDev);
