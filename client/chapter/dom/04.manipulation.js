@@ -13,18 +13,29 @@ div.className = "third";
 div.textContent = "세 번째 입니다.";
 
 /* 노드 삽입, 삭제 메서드 ---------------------------------------------------- */
+
 const h1 = getNode("h1");
+
 // - node.append(노드나 문자열) – node 끝에 노드를 삽입
 // h1.append(div);
+
 // - node.prepend(노드나 문자열) – node 맨 앞에 노드를 삽입
 // h1.prepend(div);
+
 // - node.before(노드나 문자열) – node 이전에 노드를 삽입
 // h1.before(div);
+
 // - node.after(노드나 문자열) – node 다음에 노드를 삽입
 // h1.after(div);
+
 // - node.replaceWith(노드나 문자열) – node를 대체
+
 // - node.remove() – node를 제거
-// h1.remove();
+
+// hidden 제거
+// remove 삭제
+
+// h1.remove()
 
 /* '오래된' 메서드 ----------------------------------------------------------- */
 
@@ -38,49 +49,21 @@ const h1 = getNode("h1");
 // - insertAdjacentHTML
 // - insertAdjacentElement
 // - insertAdjacentText
-let index = 1;
-let template = /* html */ `<div class ="box0${index}"> 새롭게 추가된 엘리먼트 입니다.</div>`;
 
-// h1.insertAdjacentHTML("beforebegin", template);
-// h1.insertAdjacentHTML("afterbegin", template);
-// h1.insertAdjacentHTML("beforeend", template);
-// h1.insertAdjacentHTML("afterend", template);
+let index = 1;
+let template =
+  /* html */
+  `<div class='box0${index}'> 새롭게 추가된 엘리먼트 입니다.</div>`;
+
+// h1.insertAdjacentHTML('afterend',template)
+
+insertLast("h1", template);
+
+// insertFirst
+// insertLast
+// insertAfter
 
 // - "beforebegin" – elem 바로 앞에 html을 삽입
 // - "afterbegin" – elem의 첫 번째 자식 요소 바로 앞에 html을 삽입
 // - "beforeend" – elem의 마지막 자식 요소 바로 다음에 html을 삽입
 // - "afterend" – elem 바로 다음에 html을 삽입
-
-let insertBefore = (node, text) => {
-  if (typeof node === "string") node = getNode(node);
-  if (node.nodeType !== document.ELEMENT_NODE)
-    typeError("insertBefore 함수의 첫 번째 인자는 ELEMENT 노드여야 합니다.");
-  node.insertAdjacentHTML("beforebegin", text);
-};
-
-let insertFirst = (node, text) => {
-  if (typeof node === "string") node = getNode(node);
-  if (node.nodeType !== document.ELEMENT_NODE)
-    typeError("insertFirst 함수의 첫 번째 인자는 ELEMENT 노드여야 합니다.");
-  node.insertAdjacentHTML("afterbegin", text);
-};
-
-let insetLast = (node, text) => {
-  if (typeof node === "string") node = getNode(node);
-  if (node.nodeType !== document.ELEMENT_NODE)
-    typeError("insetLast 함수의 첫 번째 인자는 ELEMENT 노드여야 합니다.");
-  node.insertAdjacentHTML("beforeend", text);
-};
-
-let insertAfter = (node, text) => {
-  if (typeof node === "string") node = getNode(node);
-  if (node.nodeType !== document.ELEMENT_NODE)
-    typeError("insertAfter 함수의 첫 번째 인자는 ELEMENT 노드여야 합니다.");
-  node.insertAdjacentHTML("afterend", text);
-};
-
-// insertBefore("h1", template);
-// insertFirst("h1", template);
-insetLast("h1", template);
-// insertAfter("h1", template);
-
