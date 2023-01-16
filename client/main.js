@@ -7,6 +7,7 @@ import {
   typeError,
   isNumericString,
   showAlert,
+  copy,
 } from "./lib/index.js";
 
 import { jujeobData } from "./data/data.js";
@@ -36,4 +37,13 @@ function clickSubmitHandler(e) {
   insertLast(result, pick);
 }
 
+function clickCopyHandler() {
+  let text = result.textContent;
+  copy(text).then(() => {
+    showAlert(".alert-success", "클립보드 복사가 완료됐습니다.", 2000);
+  });
+}
+
 submit.addEventListener("click", clickSubmitHandler);
+
+result.addEventListener("click", clickCopyHandler);
