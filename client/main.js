@@ -1,3 +1,5 @@
+/* global gsap */
+
 import {
   clearContents,
   getInputValue,
@@ -8,6 +10,8 @@ import {
   isNumericString,
   showAlert,
   copy,
+  addClass,
+  removeClass,
 } from "./lib/index.js";
 
 import { jujeobData } from "./data/data.js";
@@ -24,6 +28,14 @@ function clickSubmitHandler(e) {
   if (!name) {
     console.log("이름을 입력하세요");
     showAlert(".alert-error", "이름을 입력하세요", 2000);
+
+    //  GSAP
+
+    gsap.fromTo(result, 0.01, { x: -5 }, { x: 5, clearProps: "x", repeat: 20 });
+    /* addClass(result, "shake");
+    setTimeout(() => {
+      removeClass(result, "shake");
+    }, 1000); */
     return;
   }
 
