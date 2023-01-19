@@ -1,1 +1,1 @@
-import {} from "./lib/index.js";
+import { insertLast, tiger, xhrData } from "./lib/index.js";
